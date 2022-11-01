@@ -1,29 +1,48 @@
 import React from 'react'
 import bg from "./gradient.webp"
 import Home from "./Home.jsx"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import "./login.css"
+
 
 export default function Sign() {
-  
-   
- 
+
+  const navi = useNavigate();
+
+  const handleSignIn = () => {
+    let ls = localStorage.getItem("userSetting");
+    console.log("data from local storage: ", ls);
+    if (ls === null) {
+      // localStorage.setItem("userSetting", "Akash gupta");
+      // navi('/home')
+    }
+    else {
+
+    }
+  }
+
   return (
-    <div>
-        {/* <h1>Sign Up</h1> */}
-        <div className='box'>
-    <div style={{marginTop:"100px", marginLeft:"-230px"}}> 
-        <label style={{margin:"40px", fontSize:"30px", height:"30px"}}>E-mail Id</label>
-        <input style={{marginTop:"-7000px", height:"20px", width:"200px", marginLeft:"20px"}} type={"text"}></input>
+    <div className='formCont'>
+      <div class="login-box">
+        <h2>Login</h2>
+        <form>
+          <div class="user-box">
+            <input type="text" name="name" required />
+            <label>Username</label>
+          </div>
+          <div class="user-box">
+            <input type="password" name="pass" required />
+            <label>Password</label>
+          </div>
+          <div onClick={() => handleSignIn()} className='buttonDesign' >
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Sign in
+          </div>
+        </form>
+      </div>
     </div>
-    <div style={{margin:"30px", marginTop:"50px",  marginLeft:"-245px"}}> 
-        <label style={{margin:"40px", width:"60px", fontSize:"30px", height:"30px", marginTop:"-50px", marginLeft:"55px"}}>Password     </label>
-        <input style={{marginTop:"-5000px", height:"20px", width:"200px", marginLeft:"10px"}} type={"Password"}></input>
-    </div>
-    <img style={{marginLeft:"-200px", marginTop:"40px"}} src={bg}  height="45px" width="395px" />
-     <div style={{marginTop:"-38px", marginLeft:"-30px", fontSize:"20px" }}  ><Link to={"Home"}> Sign Up</Link></div>
-   
- </div>
-    </div>
-   
   )
 }

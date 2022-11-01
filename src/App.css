@@ -158,3 +158,8 @@ p {
     height: 80vh;
   }
 } */
+
+body {
+  margin: 0;
+  padding: 0;
+}

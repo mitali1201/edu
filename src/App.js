@@ -14,11 +14,10 @@ function App() {
   return (
     <>
       <Router>
-      <Header />
+        <Header />
         <Routes>
-        <Route  path='/' element={<Register></Register>} />
-        
-          {/* <Route  path='/home' element={Home} /> */}
+          <Route path='/' element={<Register></Register>} />
+          <Route path='/home' element={<><h1>Home</h1></>} />
           {/* <Route path="/"  element={<Home></Home>} /> */}
           {/* <Route path='/' element={Home} ></Route> */}
           {/* <Route exact path='/about' element={About} /> */}
