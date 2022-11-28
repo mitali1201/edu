@@ -1,0 +1,121 @@
+#main-nav{
+  float:left;
+  clear:left;
+  list-style:none;
+  width:1370px; 
+  height:200px;
+  font-size:20pxpx;
+  font-family:Arial, Verdana;
+  font-weight:normal;
+  border-top-width:2px;
+  border-bottom-width:2px;
+  position: fixed;
+  margin: 10px;
+  margin-top: 200px;
+  margin-left: 50px;
+  text-align:left;
+}
+#main-nav a{
+  font-weight:bold;
+  text-decoration:none;
+}
+#main-nav li{
+  line-height:26px;
+  border-bottom:0px;
+}
+* html #main-nav li{
+  line-height:26px;
+  height:26px;
+}
+*:first-child+html #main-nav li{
+  line-height:26px;
+  height:26px;
+}
+#main-nav li a{
+  display:block;
+  padding-left:10px;
+  color:#fff;
+  /* font-weight:bold; */
+}
+#home a{
+  background-color:lavender;
+}
+#loisirs a{
+  background-color:lightseagreen;
+}
+#seminaire a{
+  background:lightseagreen;
+}
+#mariage a{
+  background:lightseagreen;
+}
+#location a{
+  background:lightseagreen;
+}
+#transfert a{
+  background:lightseagreen;
+}
+#contact a{
+  background:lightseagreen;
+}
+ 
+#home a:hover{
+  background:palevioletred;
+}
+#loisirs a:hover{
+  background:#AC5B5B;
+}
+
+#seminaire a:hover{
+  background:#CB8F14;
+}
+#mariage a:hover{
+  background:#A85400;
+}
+#location a:hover{
+  background:#CD8338;
+}
+#transfert a:hover{
+  background:#BE7E7E;
+}
+ 
+#main-nav ul {
+ list-style-type:none;
+ }
+#main-nav ul li ul {
+ display:none;
+ margin-left:0;
+ margin-bottom:9px;
+ padding-left:0px;
+ }
+ #main-nav ul {
+ margin-left:0;
+ margin-bottom:9px;
+ }
+#main-nav ul li:focus ul {
+ display:block;
+ }
+li[tabindex]>a {pointer-events:none;}
+li[tabindex]:before {
+  content:'+';
+  float:right;
+  padding-right:0.5em;
+  /* font-weight:bold; */
+  color:white;
+  font-size:120%;
+  line-height:26px;
+ 
+}
+li[tabindex]:focus:before {
+  content:'-';
+}
+li:focus {pointer-events:none;} /* referme le menu */
+li:focus ul li a {pointer-events:auto;} /* maintient l'interaction des liens de sous menu avec la souris*/
+
+
+.dropdown-items{
+  background-image: url(https://png.pngtree.com/background/20210710/original/pngtree-leaf-mottled-texture-meat-pink-background-picture-image_988355.jpg) ;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}

@@ -3,6 +3,7 @@ import "./login.css"
 import { useNavigate } from 'react-router-dom';
 import { useRef } from 'react';
 
+
 export default function Login() {
 
   const navi = useNavigate();
@@ -24,6 +25,8 @@ export default function Login() {
     }
     else {
       try {
+        console.log('inside try in');
+
         let r = await fetch('http://localhost:9189/getUser', {
           method: "POST",
           headers: {
@@ -31,12 +34,17 @@ export default function Login() {
           },
           body: JSON.stringify({ email, password })
         });
+        console.log("Response", r)
         let r1 = await r.json();
         console.log('data: ', r1);
         if (!r1.issue) {
+          console.log('inside Successfull request');
+
           let ls = localStorage.setItem("userSetting", JSON.stringify({ loginStatus: true }));
           navi('/home');
         } else {
+          console.log('inside request error');
+
           if (r1.response === 0) {
             Reset();
             alert('either email or password is wrong');
@@ -54,7 +62,9 @@ export default function Login() {
   }
 
   return (
-    <div className='formCont'>
+  
+      
+
       <div class="login-box">
         <h2>Login</h2>
         <form>
@@ -66,7 +76,7 @@ export default function Login() {
             <input ref={passRef} type="password" name="pass" required />
             <label>Password</label>
           </div>
-          <div onClick={() => handleLogIn()} className='buttonDesign'>
+          <div onClick={() => handleLogIn()} style={{cursor:"pointer"}} className='buttonDesign'>
             <span></span>
             <span></span>
             <span></span>
@@ -74,7 +84,9 @@ export default function Login() {
             Log in
           </div>
         </form>
+       
       </div>
-    </div>
+      
+  
   )
 }

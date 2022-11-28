@@ -67,7 +67,7 @@ export default function Sign() {
             <input ref={passRef} type="password" name="pass" required />
             <label>Password</label>
           </div>
-          <div onClick={() => handleSignIn()} className='buttonDesign' >
+          <div onClick={() => handleSignIn()} style={{cursor:"pointer"}} className='buttonDesign' >
             <span></span>
             <span></span>
             <span></span>
